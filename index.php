@@ -5,8 +5,7 @@ require_once __DIR__ . '/bootstrap/page.php';
 
 $autoload = new Autoload();
 
-//$key = $_GET['key'];
-$key = 'test';
+$key = $_GET['key'];
 
 $page = new Page($key);
 $page->display();
