@@ -31,7 +31,7 @@ class Page
      * ページコントローラーの実行
      */
 
-    public function display()
+    public function exec()
     {
 
         // ページコントローラークラス名を取得

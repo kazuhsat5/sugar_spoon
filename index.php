@@ -9,5 +9,5 @@ $autoload = new Autoload();
 $key = $_GET['key'];
 
 $page = new Page($key);
-$page->display();
+$page->exec();
 ?>
