@@ -18,8 +18,5 @@ class DefaultController extends BaseController
 
         // 変数をhtmlに渡す
         $this->setResult('message', $message);
-
-        // htmlの表示
-        $this->_setPage($this->_key);
     }
 }

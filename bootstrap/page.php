@@ -40,13 +40,13 @@ class Page
         try {
 
             // インスタンス作成
-            $obj = new $class;
-
-            // ページキーセット
-            $obj->setKey($this->_key);
+            $obj = new $class($this->_key);
 
             // メイン処理実行
             $obj->exec();
+
+            // html表示
+            $obj->display();
 
         } catch (Exception $e) {
 

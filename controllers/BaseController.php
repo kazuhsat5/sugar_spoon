@@ -16,6 +16,13 @@ abstract class BaseController
         );
 
 
+    public function __construct($key)
+    {
+
+        $this->_key = $key;
+    }
+
+
     /** メイン処理 */
     abstract public function exec();
 
@@ -26,23 +33,18 @@ abstract class BaseController
      * @param String $key ページキー
      */
 
-    public function _setPage($key)
+    public function display()
     {
         
         extract($this->_result);
 
-        require_once VIEWS_DIR . $key . '.html';
+        require_once VIEWS_DIR . $this->_key . '.html';
     }
 
 
     /**
      * setter
      */
-
-    public function setKey($key)
-    {
-        $this->_key = $key;
-    }
 
     public function setTitle($title)
     {
