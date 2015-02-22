@@ -13,6 +13,13 @@ class Autoload
     }
 
 
+    /**
+     * autolod
+     *
+     * @param String $class クラス名
+     * @return bool
+     * @throws
+     */
     static public function load($class)
     {
 
@@ -30,6 +37,6 @@ class Autoload
             }
         }
 
-        return false;
+        throw new Exception('[__autoload] this file does\'nt exists. class:' . $class);
     }
 }
