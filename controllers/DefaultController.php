@@ -12,8 +12,12 @@ class DefaultController extends BaseController
         // タイトルセット
         $this->setTitle(self::PAGE_TITLE);
 
+        // modelの呼び出し
+        $model = new DefaultModel();
+        $message = $model->getMessage();
+
         // 変数をhtmlに渡す
-        $this->setResult('message', 'This is Default Page.');
+        $this->setResult('message', $message);
 
         // htmlの表示
         $this->_setPage($this->_key);

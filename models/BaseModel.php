@@ -6,5 +6,6 @@
 
 abstract class BaseModel
 {
+    //
 }
 ?>
