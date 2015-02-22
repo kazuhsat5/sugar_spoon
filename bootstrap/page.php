@@ -44,7 +44,7 @@ class Page
 
         } catch (Exception $e) {
 
-
+            // 404ページの表示
             header("HTTP/1.0 404 Not Found");
             exit;
         }
