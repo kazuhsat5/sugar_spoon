@@ -39,7 +39,13 @@ class Page
 
         try {
 
+            // インスタンス作成
             $obj = new $class;
+
+            // ページキーセット
+            $obj->setKey($this->_key);
+
+            // メイン処理実行
             $obj->exec();
 
         } catch (Exception $e) {
