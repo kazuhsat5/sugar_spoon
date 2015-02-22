@@ -7,9 +7,9 @@
 return array(
 
     /** コントローラーディレクトリ */
-    'controllers' => __DIR__ . '/../controllers/',
+    'controllers' => CONTROLLERS_DIR,
 
     /** モデルディレクトリ */
-    'models' => __DIR__ . '/../models/',
+    'models' => MODELS_DIR,
 );
 ?>
