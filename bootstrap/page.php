@@ -8,6 +8,7 @@ class Page
 {
 
     const PAGE_NAME_DELIMITER = '_';
+    const CONTROLLER_SUFFIX   = 'Controller';
 
 
     private $_key; # ページキー
@@ -15,7 +16,10 @@ class Page
 
     /**
      * コンストラクタ
+     *
+     * @page String $key ページキー
      */
+
     public function __construct($key)
     {
 
@@ -26,14 +30,24 @@ class Page
     /**
      * ページコントローラーの実行
      */
+
     public function display()
     {
 
         // ページコントローラークラス名を取得
         $class = $this->_getControllerName($this->_key);
 
-        $obj = new $class;
-        $obj->exec();
+        try {
+
+            $obj = new $class;
+            $obj->exec();
+
+        } catch (Exception $e) {
+
+
+            header("HTTP/1.0 404 Not Found");
+            exit;
+        }
     }
 
 
@@ -54,7 +68,7 @@ class Page
             $words[] = ucfirst($word);
         }
 
-        $result = implode('_', $words) . 'Controller';
+        $result = implode('_', $words) . self::CONTROLLER_SUFFIX;
 
         return $result;
     }
